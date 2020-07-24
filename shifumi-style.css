@@ -71,6 +71,10 @@ body {
     text-align: center; 
 }
 
+.results {
+    transform: translateY(0);
+}
+
 .results.--is-hidden {
     display: none;
 }
@@ -119,10 +123,15 @@ p {
 }
 
 .result__resume {
+    opacity: 1;
     font-size: 2.5rem;
     font-weight: bold; 
     text-align: center;
     color: var(--font-color);
+}
+
+.result__resume.--is-hidden {
+    opacity: 0;
 }
 
 .result__resume_winner {
@@ -184,12 +193,10 @@ p {
 
 .result__inner.--is-winner {
     transform: scale(1.1);
-    transition: 0.2s ease-in-out;
     border: 2px solid var(--win-color);
 }
 
 .result__inner.--is-winner path {
-    transition: 0.2s ease-in-out;
     stroke: var(--win-color);
 }
 
@@ -218,5 +225,13 @@ p {
     stroke-width: 0.35rem;
 }
 
+/* ==========================================================================
+   Animations
+   ========================================================================== */
 
-
+@keyframes shakeHands {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-1rem); }
+    75% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}

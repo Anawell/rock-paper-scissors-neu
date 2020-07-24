@@ -2,7 +2,16 @@
    Elements
    ========================================================================== */
 
-   const COMBINATIONS = [
+const ANIMATION = {
+    name: 'shakeHands',
+    duration: '800',
+    timingFunction: 'linear',
+    iterationCount: '3'
+}
+
+const TIME_BEFORE_RESULT = (parseInt(ANIMATION.duration) * parseInt(ANIMATION.iterationCount)) || 3000;
+
+const COMBINATIONS = [
     {
         weapon: 'rock',
         look: `<path d="M30.9,48.6 M30.5,38.3c-3.1-0.4-3.1-0.4-5.2-0.4c-3.7,0-6.7,8-6.7,11.7c0,1.6,1.5,5,2.4,6.1
@@ -36,6 +45,7 @@ const computerResultElement = document.querySelector('[data-result="computer"] s
 const computerScoreElement = document.querySelector('[data-score="computer"]');
 const yourScoreElement = document.querySelector('[data-score="you"]');
 const resultWinnerElement = document.querySelector('[data-result-winner]');
+const resultWinnerNameElement = document.querySelector('[data-result-winner-name]');
 
 
 /* ==========================================================================
@@ -43,16 +53,28 @@ const resultWinnerElement = document.querySelector('[data-result-winner]');
    ========================================================================== */
 
 buttonChoiceElements.forEach(buttonChoice => {
-    buttonChoice.addEventListener('click', e => {
-        const yourChoiceName = buttonChoice.dataset.option;
-        const yourChoice = COMBINATIONS.find(combination => combination.weapon === yourChoiceName)
-        getPlayersChoices(yourChoice);
+    buttonChoice.addEventListener('click', () => {
+        initGame(buttonChoice);
     });
 });
+
+resultsContainerElement.addEventListener('animationend', () => {
+    resultsContainerElement.style.animation = 'none';
+})
 
 /* ==========================================================================
    Functions
    ========================================================================== */
+
+function initGame(buttonChoice) {
+    resetGame();
+    const yourChoiceName = buttonChoice.dataset.option;
+    const yourChoice = COMBINATIONS.find(combination => combination.weapon === yourChoiceName);
+    animateHands();
+    setTimeout(() => {
+        getPlayersChoices(yourChoice);
+    }, TIME_BEFORE_RESULT);
+}
 
 function getPlayersChoices(yourChoice) {
     const computerChoice = getComputerChoice();
@@ -83,8 +105,7 @@ function isWinner(choice, oppositeChoice) {
 }
 
 function showPlayersResults(playerSvg, choice, winner) {
-    playerSvg.parentNode.classList.remove('--is-winner', '--is-looser');
-    resultsContainerElement.classList.remove('--is-hidden');
+    resultWinnerElement.classList.remove('--is-hidden');
     if (winner) {
         playerSvg.parentNode.classList.add('--is-winner');
     } else {
@@ -98,5 +119,21 @@ function incrementScore(scoreElement) {
 }
 
 function sayWhoIsWinner(playerName) {
-    resultWinnerElement.innerText = playerName;
+    resultWinnerNameElement.innerText = playerName;
+}
+
+function resetGame() {
+    resultsContainerElement.classList.remove('--is-hidden');
+    resultWinnerElement.classList.add('--is-hidden');
+    yourResultElement.parentNode.classList.remove('--is-winner', '--is-looser');
+    computerResultElement.parentNode.classList.remove('--is-winner', '--is-looser');
+    yourResultElement.innerHTML = COMBINATIONS[0].look;
+    computerResultElement.innerHTML = COMBINATIONS[0].look;
+}
+
+function animateHands() {
+    resultsContainerElement.style.animationName = ANIMATION.name;
+    resultsContainerElement.style.animationDuration = `${ANIMATION.duration}ms`;
+    resultsContainerElement.style.animationTimingFunction = ANIMATION.timingFunction;
+    resultsContainerElement.style.animationIterationCount = ANIMATION.iterationCount;
 }
