@@ -40,10 +40,15 @@ const COMBINATIONS = [
 
 const buttonChoiceElements = document.querySelectorAll('[data-option]');
 const resultsContainerElement = document.getElementById('results');
+
+const countDownElement = document.querySelector('[data-counter]');
+
 const yourResultElement = document.querySelector('[data-result="you"] svg');
 const computerResultElement = document.querySelector('[data-result="computer"] svg');
+
 const computerScoreElement = document.querySelector('[data-score="computer"]');
 const yourScoreElement = document.querySelector('[data-score="you"]');
+
 const resultWinnerElement = document.querySelector('[data-result-winner]');
 const resultWinnerNameElement = document.querySelector('[data-result-winner-name]');
 
@@ -68,10 +73,12 @@ resultsContainerElement.addEventListener('animationend', () => {
 
 function initGame(buttonChoice) {
     resetGame();
+    countDown(parseInt(ANIMATION.iterationCount));
     const yourChoiceName = buttonChoice.dataset.option;
     const yourChoice = COMBINATIONS.find(combination => combination.weapon === yourChoiceName);
     animateHands();
     setTimeout(() => {
+        countDownElement.innerText = '';
         getPlayersChoices(yourChoice);
     }, TIME_BEFORE_RESULT);
 }
@@ -137,3 +144,15 @@ function animateHands() {
     resultsContainerElement.style.animationTimingFunction = ANIMATION.timingFunction;
     resultsContainerElement.style.animationIterationCount = ANIMATION.iterationCount;
 }
+
+function countDown(fromNumber) {
+    countDownElement.innerText = fromNumber;
+    let nextNumber = fromNumber - 1;
+    if (nextNumber > 0) {
+        setTimeout(() => {
+            countDown(nextNumber);
+        }, parseInt(ANIMATION.duration));    
+    }
+}
+
+
