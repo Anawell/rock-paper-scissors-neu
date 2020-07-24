@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Reset CSS
+   ========================================================================== */
+
+*, 
+*::after, 
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+:root {
+    font-size: 62.5%;
+    --light-color: #fff;
+    --extra-color: #F43A69;
+    --background-color: #ecf0f3;
+    --font-color: #5e6086;
+    --button-size: 120px;
+    --neu-shadow: 9px 9px 16px #d1d9e6, -9px -9px 16px #fff;
+    --loose-color: #ff9800;
+    --win-color: #6bec1a;
+}
+
+/* ==========================================================================
+   Global
+   ========================================================================== */
+
+body {
+    background-color: var(--background-color);
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: var(--font-color)
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 600px;
+    padding: 1.6rem;
+}
+
+.choices, 
+.scores, 
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 2rem auto;
+    width: 100%;
+    text-align: center; 
+}
+
+.results.--is-hidden {
+    display: none;
+}
+
+.choices__title {
+    grid-column: 1 / -1;
+}
+
+.score__you {
+    grid-column: 1;
+}
+
+.score__computer {
+    grid-column: 3;
+}
+
+/* ==========================================================================
+   Headings and texts
+   ========================================================================== */
+
+h1, 
+h2, 
+p {
+    margin: 1em 0;
+}
+
+.app__title {
+    position: relative;
+    margin-top: 0;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--extra-color);
+}
+
+.app__title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4.2rem;
+    transform: translateX(-50%);
+    width: 0.2rem;
+    height: 3rem;
+    background-color: var(--extra-color);
+}
+
+.result__resume {
+    font-size: 2.5rem;
+    font-weight: bold; 
+    text-align: center;
+    color: var(--font-color);
+}
+
+.result__resume_winner {
+    display: block;
+    font-size: 1.4em;
+    text-transform: lowercase;
+}
+
+.result__resume_winner::first-letter {
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.choices__option, 
+.result {
+    position: relative;
+    box-shadow: inset var(--neu-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: var(--button-size);
+    height: var(--button-size);
+}
+
+.choices__option_inner, 
+.result__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    margin: auto;
+    box-shadow: var(--neu-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: calc(var(--button-size) * 0.7);
+    height: calc(var(--button-size) * 0.7);
+    background: var(--background-color);  
+    cursor: pointer;
+}
+
+.result__inner, .result__inner path {
+    transition: none;
+}
+
+.result__inner.--is-looser {
+    border: 2px solid var(--loose-color);
+}
+
+.result__inner.--is-looser path {
+    stroke: var(--loose-color);
+}
+
+.result__inner.--is-winner {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+    border: 2px solid var(--win-color);
+}
+
+.result__inner.--is-winner path {
+    transition: 0.2s ease-in-out;
+    stroke: var(--win-color);
+}
+
+.choices__icon, 
+.result__icon {
+    width: calc(var(--button-size) * 0.5);
+}
+
+.choices__icon path, 
+.result__icon path {
+    transition: 0.2s ease-in-out;
+    fill: none;
+    stroke: var(--font-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-width: 0.25rem; 
+}
+
+.choices__option:hover .choices__option_inner {
+    border: 2px solid var(--extra-color);
+}
+
+.choices__option:hover .choices__icon path {
+    stroke: var(--extra-color);
+    stroke-width: 0.35rem;
+}
+
+
+
