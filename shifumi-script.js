@@ -92,7 +92,7 @@ function getPlayersChoices(yourChoice) {
 
     if (youAreWinner) {
         incrementScore(yourScoreElement);
-        sayWhoIsWinner("you man");
+        sayWhoIsWinner("youuu");
     }
     else if (computerIsWinner) {
         incrementScore(computerScoreElement);
@@ -119,6 +119,7 @@ function showPlayersResults(playerSvg, choice, winner) {
         playerSvg.parentNode.classList.add('--is-looser');
     }
     playerSvg.innerHTML = choice.look;
+    playerSvg.parentNode.setAttribute('aria-label', choice.weapon);
 }
 
 function incrementScore(scoreElement) {
@@ -136,6 +137,8 @@ function resetGame() {
     computerResultElement.parentNode.classList.remove('--is-winner', '--is-looser');
     yourResultElement.innerHTML = COMBINATIONS[0].look;
     computerResultElement.innerHTML = COMBINATIONS[0].look;
+    yourResultElement.parentNode.setAttribute('aria-label', '');
+    computerResultElement.parentNode.setAttribute('aria-label', '');
 }
 
 function animateHands() {

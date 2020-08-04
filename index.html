@@ -8,13 +8,14 @@
     <script src="shifumi-script.js" defer></script>
 </head>
 <body>
-    <section id="app" class="container">
+    <main id="app" class="container">
         <h1 class="app__title">Rock Paper Scissors</h1>
-        <div class="choices">
+        <section class="choices">
             <p class="choices__title">Choose your weapon:</p>
-            <div class="choices__option" data-option="rock">
+            <div class="choices__option" data-option="rock" aria-label="rock" role="button">
                 <div class="choices__option_inner">
-                    <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" role="img" aria-labelledby="rock-icon">
+                        <title id="rock-icon" lang="en">Rock icon</title>
                         <path d="M30.9,48.6 M30.5,38.3c-3.1-0.4-3.1-0.4-5.2-0.4c-3.7,0-6.7,8-6.7,11.7c0,1.6,1.5,5,2.4,6.1
                         L31,70 M48,83.5h16.4c8,0,14.7-7,14.7-15h0.4V31c0-3.2-2.5-6-5.7-6.1c-3.3-0.1-6.3,1.5-6.3,4.8v4.9v-8.5c0-3-2.1-5.6-5-6.1
                         c-3.6-0.6-7,2.1-7,5.7v4.9v-7.5c0-2.7-1.8-5.3-4.4-6c-3.9-1-7.6,1.9-7.6,5.7v9.9l-0.4-0.2l0-5.8c0-3.6-3.1-6.3-6.7-5.7
@@ -22,9 +23,10 @@
                     </svg>
                 </div>
             </div>
-            <div class="choices__option" data-option="paper">
+            <div class="choices__option" data-option="paper" aria-label="paper" role="button">
                 <div class="choices__option_inner">
-                    <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" role="img" aria-labelledby="paper-icon">
+                        <title id="paper-icon" lang="en">Paper icon</title>
                         <path d="M33.5,62 M50,96.5h17c8,0,14.5-6.5,14.5-14.5v0l0-58.6c0-3.2-2.5-6-5.7-6.1c-3.3-0.1-6,2.6-6,5.9
                         L69.5,48l0-34.5c0-3-2.1-5.6-5-6.1c-3.6-0.6-7,2.1-7,5.7V44l0-33.5c0-2.7-1.8-5.3-4.4-6c-3.9-1-7.6,1.9-7.6,5.7V46l-0.2-0.2L45.5,17
                         c0-3.6-3.3-6.3-6.9-5.7c-2.9,0.5-5,3.1-5,6.1l0,44.6l-8.7-10.6l0.3,0.3c-1.2-1.5-3.1-2.4-5.2-2.4c-3.7,0-6.7,3-6.7,6.7
@@ -32,18 +34,19 @@
                     </svg>
                 </div>
             </div>
-            <div class="choices__option" data-option="scissors">
+            <div class="choices__option" data-option="scissors"  aria-label="scissors" role="button">
                 <div class="choices__option_inner">
-                 <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-                     <path d="M35.4,82.5L16.3,59.2c-0.9-1.1-1.4-2.6-1.4-4.1c0-3.7,3-6.7,6.7-6.7c2.1,0,3.9,0.9,5.2,2.4
-                     l-0.3-0.3l9,12.3l-9-45.6c-1.1-5.1,1.8-7.3,4.7-7.8c3.6-0.6,6.9,1.2,7.9,5.7l6.6,31.1l1.4-0.2l2-35.9c0-3.8,3.7-6.7,7.6-5.7
-                     c2.7,0.7,4.4,3.2,4.4,6l-2,32.5l0.3-3.4c1.3-3.6,3.2-5.7,6.9-5.2c2.9,0.5,5.2,3.2,5.2,6.1v6.5l0.2,0.1c0-3.3,2.6-6,5.9-5.9
-                     c3.2,0.1,5.9,2.9,5.9,6.1v34h-0.2c0,8-6.7,14-14.7,14H52"/>
+                 <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" role="img" aria-labelledby="scissors-icon">
+                    <title id="scissors-icon" lang="en">Scissors icon</title>
+                    <path d="M35.4,82.5L16.3,59.2c-0.9-1.1-1.4-2.6-1.4-4.1c0-3.7,3-6.7,6.7-6.7c2.1,0,3.9,0.9,5.2,2.4
+                    l-0.3-0.3l9,12.3l-9-45.6c-1.1-5.1,1.8-7.3,4.7-7.8c3.6-0.6,6.9,1.2,7.9,5.7l6.6,31.1l1.4-0.2l2-35.9c0-3.8,3.7-6.7,7.6-5.7
+                    c2.7,0.7,4.4,3.2,4.4,6l-2,32.5l0.3-3.4c1.3-3.6,3.2-5.7,6.9-5.2c2.9,0.5,5.2,3.2,5.2,6.1v6.5l0.2,0.1c0-3.3,2.6-6,5.9-5.9
+                    c3.2,0.1,5.9,2.9,5.9,6.1v34h-0.2c0,8-6.7,14-14.7,14H52"/>
                  </svg>
                 </div> 
              </div>
-        </div>
-        <div class="scores">
+        </section>
+        <section class="scores">
             <div class="score__you">
                 <h2>You</h2>
                 <span data-score="you">0</span>
@@ -52,11 +55,12 @@
                 <h2>Computer</h2>
                 <span data-score="computer">0</span>
             </div>
-        </div>
-        <div id="results" class="results --is-hidden">
+        </section>
+        <section id="results" class="results --is-hidden">
             <div class="result">
-                <div class="result__inner" data-result="you">
-                    <svg class="result__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                <div class="result__inner" data-result="you" role="img" aria-label="your result">
+                    <svg class="result__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" aria-labelledby="your-result">
+                        <title id="your-result" lang="en">Your result icon</title>
                         <path d="M30.9,48.6 M30.5,38.3c-3.1-0.4-3.1-0.4-5.2-0.4c-3.7,0-6.7,8-6.7,11.7c0,1.6,1.5,5,2.4,6.1
                         L31,70 M48,83.5h16.4c8,0,14.7-7,14.7-15h0.4V31c0-3.2-2.5-6-5.7-6.1c-3.3-0.1-6.3,1.5-6.3,4.8v4.9v-8.5c0-3-2.1-5.6-5-6.1
                         c-3.6-0.6-7,2.1-7,5.7v4.9v-7.5c0-2.7-1.8-5.3-4.4-6c-3.9-1-7.6,1.9-7.6,5.7v9.9l-0.4-0.2l0-5.8c0-3.6-3.1-6.3-6.7-5.7
@@ -73,10 +77,10 @@
                     won
                 </p>
             </div>
-            
             <div class="result">
-                <div class="result__inner" data-result="computer">
-                    <svg class="result__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                <div class="result__inner" data-result="computer" role="img" aria-label="Computer result">
+                    <svg class="result__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" aria-labelledby="computer-result">
+                        <title id="computer-result" lang="en">Computer result icon</title>
                         <path d="M30.9,48.6 M30.5,38.3c-3.1-0.4-3.1-0.4-5.2-0.4c-3.7,0-6.7,8-6.7,11.7c0,1.6,1.5,5,2.4,6.1
                         L31,70 M48,83.5h16.4c8,0,14.7-7,14.7-15h0.4V31c0-3.2-2.5-6-5.7-6.1c-3.3-0.1-6.3,1.5-6.3,4.8v4.9v-8.5c0-3-2.1-5.6-5-6.1
                         c-3.6-0.6-7,2.1-7,5.7v4.9v-7.5c0-2.7-1.8-5.3-4.4-6c-3.9-1-7.6,1.9-7.6,5.7v9.9l-0.4-0.2l0-5.8c0-3.6-3.1-6.3-6.7-5.7
@@ -84,7 +88,7 @@
                     </svg>
                 </div> 
             </div>   
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
 </html>
