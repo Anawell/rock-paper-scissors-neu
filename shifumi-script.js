@@ -63,6 +63,14 @@ buttonChoiceElements.forEach(buttonChoice => {
     });
 });
 
+buttonChoiceElements.forEach(buttonChoice => {
+    buttonChoice.addEventListener('keypress', (e) => {
+        if(e.key === 'Enter') {
+            initGame(buttonChoice);
+        }
+    });
+});
+
 resultsContainerElement.addEventListener('animationend', () => {
     resultsContainerElement.style.animation = 'none';
 })

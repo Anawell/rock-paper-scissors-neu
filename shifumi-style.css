@@ -166,6 +166,7 @@ p {
     border-radius: 50%;
     width: var(--button-size);
     height: var(--button-size);
+    outline: none;
 }
 
 .choices__option_inner, 
@@ -205,11 +206,13 @@ p {
     stroke-width: 0.25rem; 
 }
 
-.choices__option:hover .choices__option_inner {
+.choices__option:hover .choices__option_inner, 
+.choices__option:focus .choices__option_inner {
     border: 2px solid var(--extra-color);
 }
 
-.choices__option:hover .choices__icon path {
+.choices__option:hover .choices__icon path,
+.choices__option:focus .choices__icon path {
     stroke: var(--extra-color);
     stroke-width: 0.35rem;
 }
