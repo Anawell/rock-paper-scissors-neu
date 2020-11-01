@@ -13,7 +13,7 @@
         <section class="choices">
             <p class="choices__title">Choose your weapon:</p>
             <div class="choices__option" data-option="rock" aria-label="rock" role="button" tabindex="0">
-                <div class="choices__option_inner">
+                <div class="choices__option__inner">
                     <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" role="img" aria-labelledby="rock-icon">
                         <title id="rock-icon" lang="en">Rock icon</title>
                         <path d="M30.9,48.6 M30.5,38.3c-3.1-0.4-3.1-0.4-5.2-0.4c-3.7,0-6.7,8-6.7,11.7c0,1.6,1.5,5,2.4,6.1
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="choices__option" data-option="paper" aria-label="paper" role="button" tabindex="0">
-                <div class="choices__option_inner">
+                <div class="choices__option__inner">
                     <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" role="img" aria-labelledby="paper-icon">
                         <title id="paper-icon" lang="en">Paper icon</title>
                         <path d="M33.5,62 M50,96.5h17c8,0,14.5-6.5,14.5-14.5v0l0-58.6c0-3.2-2.5-6-5.7-6.1c-3.3-0.1-6,2.6-6,5.9
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="choices__option" data-option="scissors"  aria-label="scissors" role="button" tabindex="0">
-                <div class="choices__option_inner">
+                <div class="choices__option__inner">
                  <svg class="choices__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" role="img" aria-labelledby="scissors-icon">
                     <title id="scissors-icon" lang="en">Scissors icon</title>
                     <path d="M35.4,82.5L16.3,59.2c-0.9-1.1-1.4-2.6-1.4-4.1c0-3.7,3-6.7,6.7-6.7c2.1,0,3.9,0.9,5.2,2.4
@@ -56,7 +56,7 @@
                 <span data-score="computer">0</span>
             </div>
         </section>
-        <section id="results" class="results --is-hidden">
+        <section id="results" class="results is-hidden">
             <div class="result">
                 <div class="result__inner" data-result="you" role="img" aria-label="your result">
                     <svg class="result__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" aria-labelledby="your-result">
@@ -72,7 +72,7 @@
                 <p class="result__counter">
                     <span data-counter></span>
                 </p>
-                <p class="result__resume --is-hidden" data-result-winner>
+                <p class="result__resume is-hidden" data-result-winner>
                     <span data-result-winner-name class="result__resume_winner"></span>
                     won
                 </p>

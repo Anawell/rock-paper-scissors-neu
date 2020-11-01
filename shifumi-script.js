@@ -120,11 +120,11 @@ function isWinner(choice, oppositeChoice) {
 }
 
 function showPlayersResults(playerSvg, choice, winner) {
-    resultWinnerElement.classList.remove('--is-hidden');
+    resultWinnerElement.classList.remove('is-hidden');
     if (winner) {
-        playerSvg.parentNode.classList.add('--is-winner');
+        playerSvg.parentNode.classList.add('is-winner');
     } else {
-        playerSvg.parentNode.classList.add('--is-looser');
+        playerSvg.parentNode.classList.add('is-looser');
     }
     playerSvg.innerHTML = choice.look;
     playerSvg.parentNode.setAttribute('aria-label', choice.weapon);
@@ -139,10 +139,10 @@ function sayWhoIsWinner(playerName) {
 }
 
 function resetGame() {
-    resultsContainerElement.classList.remove('--is-hidden');
-    resultWinnerElement.classList.add('--is-hidden');
-    yourResultElement.parentNode.classList.remove('--is-winner', '--is-looser');
-    computerResultElement.parentNode.classList.remove('--is-winner', '--is-looser');
+    resultsContainerElement.classList.remove('is-hidden');
+    resultWinnerElement.classList.add('is-hidden');
+    yourResultElement.parentNode.classList.remove('is-winner', 'is-looser');
+    computerResultElement.parentNode.classList.remove('is-winner', 'is-looser');
     yourResultElement.innerHTML = COMBINATIONS[0].look;
     computerResultElement.innerHTML = COMBINATIONS[0].look;
     yourResultElement.parentNode.setAttribute('aria-label', '');
